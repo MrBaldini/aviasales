@@ -1,0 +1,39 @@
+.content__nav {
+  display: flex;
+  margin-bottom: 20px;
+
+  .nav-btn {
+    width: 168px;
+    height: 50px;
+    color: #4A4A4A;
+    background-color: #FFFFFF;
+    border: 0;
+    font-weight: 600;
+    outline: 1px solid #DFE5EC; 
+  }
+
+  .nav-btn:hover {
+    opacity: 60%;
+    cursor: pointer;
+  }
+  
+  .nav-btn:active {
+    opacity: 1;
+  }
+  
+  .nav-btn:focus {
+    background-color: #2196F3;
+    color: #FFFFFF;
+    outline: 1px solid #2196F3;
+  }
+  
+  .nav__cheap-btn {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .nav__optimal-btn {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}

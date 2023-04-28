@@ -1,0 +1,56 @@
+.ticket__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  .header__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #2196F3;
+    margin: 0;
+    margin-left: 20px;
+    margin-top: 26px;
+  }
+
+  .header__logo {
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+}
+
+.ticket__data {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 20px;
+
+  .data__flight {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+
+    .flight-item {
+      width: 280px;
+      height: 42;
+      margin-right: 20px;
+      
+      p {
+        margin: 0;
+      }
+
+      .item-title {
+        font-weight: 600;
+        line-height: 18px;
+        color: #A0B0B9;
+      }
+
+      .item-data {
+        color: #4A4A4A;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  }
+}
