@@ -1,39 +1,52 @@
-.content__nav {
-  display: flex;
-  margin-bottom: 20px;
+@media (min-width: 480px) {
+  .content__nav {
+    display: flex;
+    margin-bottom: 15px;
 
-  .nav-btn {
-    width: 252px;
-    height: 50px;
-    color: #4a4a4a;
-    background-color: #ffffff;
-    border: 0;
-    font-weight: 600;
-    outline: 1px solid #dfe5ec;
+    .nav-btn {
+      width: 235px;
+      height: 50px;
+      color: #4a4a4a;
+      background-color: #ffffff;
+      border: 0;
+      font-weight: 600;
+      outline: 1px solid #dfe5ec;
+    }
+
+    .nav-btn:hover {
+      opacity: 60%;
+      cursor: pointer;
+    }
+  
+    .nav-btn:active {
+      opacity: 1;
+    }
+  
+    .nav-btn-focused {
+      background-color: #2196f3;
+      color: #ffffff;
+      outline: 1px solid #2196f3;
+    }
+  
+    .nav__cheap-btn {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  
+    .nav__fast-btn {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }   
+
   }
+}
 
-  .nav-btn:hover {
-    opacity: 60%;
-    cursor: pointer;
-  }
+@media (min-width: 768px) {
+  .content__nav {
+    margin-bottom: 20px;
 
-  .nav-btn:active {
-    opacity: 1;
-  }
-
-  .nav-btn-focused {
-    background-color: #2196f3;
-    color: #ffffff;
-    outline: 1px solid #2196f3;
-  }
-
-  .nav__cheap-btn {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-
-  .nav__fast-btn {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    .nav-btn {
+      width: 252px;
+    } 
   }
 }
