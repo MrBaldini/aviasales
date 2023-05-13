@@ -5,8 +5,8 @@
     list-style: none;
   
     .tickets-list__ticket {
-      width: 470px;
-      height: 184px;
+      width: 380px;
+      height: auto;
       margin: 0;
       margin-bottom: 15px;
       background-color: #ffffff;
@@ -20,6 +20,7 @@
   .content__tickets-list {  
     .tickets-list__ticket {
       width: 502px;
+      height: 184px;
       margin-bottom: 20px;
     }
   }
