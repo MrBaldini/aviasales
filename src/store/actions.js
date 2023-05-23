@@ -58,8 +58,6 @@ const ticketsLoad = () => async (dispatch) => {
   } catch (err) {
     if (err.message === 'Error code 500.') {
       dispatch(ticketsLoad());
-    } else {
-      throw new Error(err);
     }
     throw err;
   }

@@ -15,23 +15,21 @@ const TicketsList = () => {
   const filterTransitions = useSelector((state) => state.sorting.filterTransitions);
   const filterTypeTickets = useSelector((state) => state.sorting.filterTypeTickets);
   const amountTickets = useSelector((state) => state.visibilityTickets.amountTickets);
-  const sortedTickets = withFilterTransitions(tickets, filterTransitions);
-
-  const sortedFilterTypes = withFilterTypes(sortedTickets, filterTypeTickets);
+  const sortedTickets = withFilterTypes(withFilterTransitions(tickets, filterTransitions), filterTypeTickets);
 
   useEffect(() => {
     dispatch(ticketsLoad());
   }, []);
 
   useEffect(() => {
-    if (!sortedFilterTypes.length && renders) {
+    if (!sortedTickets.length && renders) {
       dispatch(ticketsEmptyOn());
     } else {
       dispatch(ticketsEmptyOff());
     }
   });
 
-  const ticketsList = sortedFilterTypes.map((ticket, index) => {
+  const ticketsList = sortedTickets.map((ticket, index) => {
     if (index < amountTickets) {
       return (
         <li key={ticket.id} className={cn(classes['tickets-list__ticket'])}>

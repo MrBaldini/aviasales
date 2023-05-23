@@ -1,5 +1,7 @@
 import { add, intervalToDuration } from 'date-fns';
 
+import * as typesOfActions from '../store/types-of-actions';
+
 // Функции фильтров компонента TicketsList
 function withFilterTypes(tickets, filter) {
   const { btnCheap, btnFast } = filter;
@@ -221,4 +223,54 @@ function setBtnChecked(state, action) {
   return newState;
 }
 
-export { withFilterTypes, withFilterTransitions, ticketPropertyExtractor, stopsCounter, setBtnChecked };
+// Функции установки чекбоксов для компонента Checkbox
+function checkboxPropsExtractor(btnProps, arrOfEvents) {
+  const {
+    FILTER_TRANSITIONS_ALL,
+    FILTER_TRANSITIONS_NONE,
+    FILTER_TRANSITIONS_ONE,
+    FILTER_TRANSITIONS_TWO,
+    FILTER_TRANSITIONS_THREE,
+  } = typesOfActions;
+  const btnName = btnProps.btnName;
+  let props = {};
+  let event;
+
+  switch (btnName) {
+    case FILTER_TRANSITIONS_ALL:
+      event = arrOfEvents[0];
+      break;
+    case FILTER_TRANSITIONS_NONE:
+      event = arrOfEvents[1];
+      break;
+    case FILTER_TRANSITIONS_ONE:
+      event = arrOfEvents[2];
+      break;
+    case FILTER_TRANSITIONS_TWO:
+      event = arrOfEvents[3];
+      break;
+    case FILTER_TRANSITIONS_THREE:
+      event = arrOfEvents[4];
+      break;
+    default:
+      event = arrOfEvents[0];
+  }
+
+  props = {
+    label: btnProps.label,
+    inputClassName: btnProps.inputClassName,
+    labelClassName: btnProps.labelClassName,
+    event,
+  };
+
+  return props;
+}
+
+export {
+  withFilterTypes,
+  withFilterTransitions,
+  ticketPropertyExtractor,
+  stopsCounter,
+  setBtnChecked,
+  checkboxPropsExtractor,
+};
